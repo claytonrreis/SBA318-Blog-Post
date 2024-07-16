@@ -15,14 +15,19 @@ The application will be available at http://localhost:5050
 
 **Project Structure**
 
-.
-├── data/ # Folder containing data files (e.g., posts.js)
-├── public/ # Folder for static files (e.g., stylesheets)
-├── routes/ # Folder for API route handlers (e.g., postsRoutes.js)
-├── views/ # Folder containing Pug template files (e.g., index.pug)
-├── app.js # Main application file
-├── package.json # Package dependencies
-└── README.md # This file (you're reading it!)
+├── data/ # Folder containing data files (e.g., posts.js);
+
+├── public/ # Folder for static files (e.g., stylesheets);
+
+├── routes/ # Folder for API route handlers (e.g., postsRoutes.js);
+
+├── views/ # Folder containing Pug template files (e.g., index.pug);
+
+├── app.js # Main application file;
+
+├── package.json # Package dependencies;
+
+└── README.md # This file (you're reading it!);
 
 **Technologies Used**
 
