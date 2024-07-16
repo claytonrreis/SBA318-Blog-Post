@@ -1,0 +1,46 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title BlogPosts
+    link(rel='stylesheet', href="../styles/styles.css")
+  body
+
+  div
+   .content 
+    h1 BlogPosts
+
+        // Form to create a new post
+
+    form(action='/api/posts', method='POST')
+      input(type='text', name='username', placeholder='Your username')
+      input(type='text', name='title', placeholder='Post title')
+      textarea(name='content', placeholder='Post content...')
+      button(type='submit') Create Post
+
+    // Iterate over each post
+    each post in posts
+      .post
+        h2= post.title
+        .post-content
+          p #{post.content}
+
+        .post-comments
+          p Written by #{post.username} on #{post.date}
+
+        // Iterate over each comment in the post
+        if post.comments.length > 0
+          h3 Comments
+          each comment in post.comments
+            .comment
+              p= comment.text
+              p Written by #{comment.username} on #{comment.date}
+        else
+          p No comments yet
+
+        // Form to add a comment
+        form(action=`/api/posts/${post.id}/comments`, method='POST')
+          input(type='text', name='username', placeholder='Your username')
+          input(type='text', name='text', placeholder='Add a comment...')
+          button(type='submit') Add Comment
